@@ -1,0 +1,25 @@
+[gateway]
+url = "http://192.168.1.10:8000"
+verify_tls = true
+
+[device]
+device_id = "POS-12"
+store = "ISL-01"
+device_type = "POS"
+enrollment_key = "paste-once"          # Cleared automatically after initial registration
+
+[collect]
+heartbeat_sec = 30                     # Tiny payload every 30s: status, IP, timestamps, FBR summary
+metrics_sec = 900                      # Full telemetry snapshot every 15 minutes
+services = ["Spooler"]                 # Add SAP CCO / POS retail services here
+ping_targets = ["8.8.8.8", "1.1.1.1"]
+ignore_printers = ["OneNote", "Microsoft", "XPS", "PDF", "Fax", "AnyDesk", "RustDesk", "Send To"]
+ignore_ports = ["nul:", "PORTPROMPT:", "SHRFAX:", "FILE:", "AD_Port", "RustDesk Printer"]
+
+[fbr]
+url = "PASTE_FBR_URL_HERE"             # e.g. https://fbr.gov.pk or fiscal endpoint; leave empty if not configured
+timeout_sec = 5
+check_sec = 300                        # Evaluated every 5 minutes and included in every heartbeat
+
+[limits]
+max_buffer_mb = 20

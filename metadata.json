@@ -1,0 +1,6 @@
+{
+  "name": "HBK IT Monitoring System",
+  "description": "Centralized IT monitoring system for retail hypermarket POS terminals with read-only Hermes AI integration and role-based dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
